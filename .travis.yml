@@ -9,6 +9,7 @@ before_install:
  - echo "Hello World"
 
 script:
+ - cd identidock
  - docker-compose up -d
 
 after_success:
