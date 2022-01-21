@@ -1,5 +1,10 @@
 sudo: required
 
+env:
+ gloval:
+  - DOCKER_USER=audwns27
+  - DOCKER_PASS=mypassword
+
 language: python
 
 services:
@@ -10,12 +15,15 @@ before_install:
 
 script:
  - cd identidock
+ - docker build -t identidock .
+ - docker run -e ENV=TEST identidock
  - docker-compose up -d
+	
 
 after_success:
- - echo "test sucess!"
+ - echo "Test sucess!"
 
 notification:
  eamil:
   - audwns392@naver.com
-
+ 
