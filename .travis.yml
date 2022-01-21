@@ -18,7 +18,6 @@ script:
  - docker build -t identidock .
  - docker run -e ENV=TEST identidock
  - docker-compose up -d
-	
 
 after_success:
  - echo "Test sucess!"
